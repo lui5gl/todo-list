@@ -81,10 +81,11 @@ main {
 
 section {
   width: 100%;
+  padding: 25px;
   max-width: 40rem;
   border-radius: 25px;
   background-color: #f8fafc;
-  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
