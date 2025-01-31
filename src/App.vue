@@ -53,7 +53,7 @@ const handleUpdateText = (id: string, text: string) => {
       <h1>Todo List ✅</h1>
       <form class="todo-form" @submit="onAddTodo">
         <input type="text" class="todo-input" placeholder="Add a new todo" />
-        <button class="add-input">Add</button>
+        <button class="add-input" type="submit">Add</button>
       </form>
       <ul>
         <item
