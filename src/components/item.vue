@@ -41,12 +41,6 @@ input[type="checkbox"] {
   width: 16px;
   height: 16px;
   accent-color: #262626;
-
-  &:checked {
-    span {
-      text-decoration: line-through;
-    }
-  }
 }
 
 .completed {
