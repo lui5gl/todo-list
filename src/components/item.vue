@@ -1,10 +1,14 @@
 <script setup lang="ts">
 defineProps<{ text: string; isCompleted: boolean }>();
 
-const emit = defineEmits<{ (e: "update"): void }>();
+const emit = defineEmits<{ (e: "update"): void; (e: "delete"): void }>();
 
-const handleUpdateState = () => {
+const handleToggleState = () => {
   emit("update");
+};
+
+const handleDeleteItem = () => {
+  emit("delete");
 };
 </script>
 
@@ -13,9 +17,12 @@ const handleUpdateState = () => {
     <input
       type="checkbox"
       :checked="isCompleted"
-      :onclick="handleUpdateState"
+      :onclick="handleToggleState"
     />
     <span :class="isCompleted ? 'completed' : ''">{{ text }}</span>
+    <button class="delete-button" :onclick="handleDeleteItem">
+      <img src="/icons/delete.svg" alt="delete" height="16" width="16" />
+    </button>
   </li>
 </template>
 

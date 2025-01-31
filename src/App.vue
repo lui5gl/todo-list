@@ -30,9 +30,14 @@ const onAddTodo = (e: Event) => {
   localStorage.setItem("todos", JSON.stringify(items.value));
 };
 
-const updateTaskStatus = (id: string) => {
+const handleToggleState = (id: string) => {
   const index = items.value.findIndex((item) => item.id === id);
   items.value[index].completed = !items.value[index].completed;
+};
+
+const handleDeleteItem = (id: string) => {
+  items.value = items.value.filter((item) => item.id !== id);
+  localStorage.setItem("todos", JSON.stringify(items.value));
 };
 </script>
 
@@ -49,8 +54,9 @@ const updateTaskStatus = (id: string) => {
           v-for="item in items"
           :key="item.id"
           :text="item.text"
-          v-on:update="updateTaskStatus(item.id)"
           :is-completed="item.completed"
+          v-on:update="handleToggleState(item.id)"
+          v-on:delete="handleDeleteItem(item.id)"
         />
       </ul>
     </section>
