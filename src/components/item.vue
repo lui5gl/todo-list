@@ -1,10 +1,20 @@
 <script setup lang="ts">
 defineProps<{ text: string; isCompleted: boolean }>();
+
+const emit = defineEmits<{ (e: "update"): void }>();
+
+const handleUpdateState = () => {
+  emit("update");
+};
 </script>
 
 <template>
   <li>
-    <input type="checkbox" :checked="isCompleted" />
+    <input
+      type="checkbox"
+      :checked="isCompleted"
+      :onclick="handleUpdateState"
+    />
     <span :class="isCompleted ? 'completed' : ''">{{ text }}</span>
   </li>
 </template>

@@ -10,7 +10,7 @@ interface Todo {
 
 const items = ref<Todo[]>([]);
 
-const handleAddTodo = (e: Event) => {
+const onAddTodo = (e: Event) => {
   e.preventDefault();
   const input = document.querySelector(".todo-input");
   const isInput = input instanceof HTMLInputElement;
@@ -24,20 +24,27 @@ const handleAddTodo = (e: Event) => {
     input.value = "";
   }
 };
+
+const updateTaskStatus = (id: string) => {
+  const index = items.value.findIndex((item) => item.id === id);
+  items.value[index].completed = !items.value[index].completed;
+};
 </script>
 
 <template>
   <main>
     <section>
       <h1>Todo List ✅</h1>
-      <form class="todo-form" @submit="handleAddTodo">
+      <form class="todo-form" @submit="onAddTodo">
         <input type="text" class="todo-input" placeholder="Add a new todo" />
         <button class="add-input">Add</button>
       </form>
       <ul>
         <item
           v-for="item in items"
+          :key="item.id"
           :text="item.text"
+          v-on:update="updateTaskStatus(item.id)"
           :is-completed="item.completed"
         />
       </ul>
