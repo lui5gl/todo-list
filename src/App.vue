@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import item from "./components/item.vue";
+import { ref } from "vue";
+
+const items = ref([
+  { text: "Learn Vue 3", completed: false },
+  { text: "Learn TypeScript", completed: true },
+  { text: "Learn Vite", completed: false },
+]);
+</script>
+
 <template>
   <main>
     <section>
@@ -6,6 +17,13 @@
         <input type="text" class="todo-input" placeholder="Add a new todo" />
         <button class="add-input" type="submit">Add</button>
       </form>
+      <ul>
+        <item
+          v-for="item in items"
+          :text="item.text"
+          :is-completed="item.completed"
+        />
+      </ul>
     </section>
   </main>
 </template>
@@ -47,4 +65,3 @@ h1 {
   background: #262626;
 }
 </style>
-
