@@ -39,6 +39,12 @@ const handleDeleteItem = (id: string) => {
   items.value = items.value.filter((item) => item.id !== id);
   localStorage.setItem("todos", JSON.stringify(items.value));
 };
+
+const handleUpdateText = (id: string, text: string) => {
+  const index = items.value.findIndex((item) => item.id === id);
+  items.value[index].text = text;
+  localStorage.setItem("todos", JSON.stringify(items.value));
+};
 </script>
 
 <template>
@@ -55,7 +61,8 @@ const handleDeleteItem = (id: string) => {
           :key="item.id"
           :text="item.text"
           :is-completed="item.completed"
-          v-on:update="handleToggleState(item.id)"
+          v-on:update_state="handleToggleState(item.id)"
+          v-on:update_text="handleUpdateText(item.id, $event)"
           v-on:delete="handleDeleteItem(item.id)"
         />
       </ul>

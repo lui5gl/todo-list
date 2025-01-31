@@ -1,14 +1,22 @@
 <script setup lang="ts">
 defineProps<{ text: string; isCompleted: boolean }>();
 
-const emit = defineEmits<{ (e: "update"): void; (e: "delete"): void }>();
+const emit = defineEmits<{
+  (e: "update_state"): void;
+  (e: "update_text", text: string): void;
+  (e: "delete"): void;
+}>();
 
 const handleToggleState = () => {
-  emit("update");
+  emit("update_state");
 };
 
 const handleDeleteItem = () => {
   emit("delete");
+};
+
+const handleUpdateText = (e: Event) => {
+  emit("update_text", (e.target as HTMLInputElement).value);
 };
 </script>
 
@@ -19,7 +27,14 @@ const handleDeleteItem = () => {
       :checked="isCompleted"
       :onclick="handleToggleState"
     />
-    <span :class="isCompleted ? 'completed' : ''">{{ text }}</span>
+
+    <input
+      type="text"
+      :value="text"
+      v-on:change="handleUpdateText"
+      :class="isCompleted ? 'completed' : ''"
+    />
+
     <button class="delete-button" :onclick="handleDeleteItem">
       <img src="/icons/delete.svg" alt="delete" height="16" width="16" />
     </button>
@@ -33,6 +48,12 @@ li {
   display: flex;
   padding: 5px 0;
   align-items: center;
+}
+
+input[type="text"] {
+  border: none;
+  padding: 5px;
+  width: 100%;
 }
 
 input[type="checkbox"] {
