@@ -99,4 +99,12 @@ h1 {
   font-weight: 700;
   background: #262626;
 }
+
+li {
+  border-bottom: 1px solid #262626;
+}
+
+li:last-child {
+  border-bottom: none;
+}
 </style>

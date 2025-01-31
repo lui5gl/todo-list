@@ -33,8 +33,6 @@ li {
   display: flex;
   padding: 5px 0;
   align-items: center;
-  border-top: 1px solid #737373;
-  border-bottom: 1px solid #737373;
 }
 
 input[type="checkbox"] {
