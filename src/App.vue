@@ -10,6 +10,9 @@ interface Todo {
 
 const items = ref<Todo[]>([]);
 
+localStorage.getItem("todos") &&
+  (items.value = JSON.parse(localStorage.getItem("todos") || "[]"));
+
 const onAddTodo = (e: Event) => {
   e.preventDefault();
   const input = document.querySelector(".todo-input");
@@ -23,6 +26,8 @@ const onAddTodo = (e: Event) => {
     });
     input.value = "";
   }
+
+  localStorage.setItem("todos", JSON.stringify(items.value));
 };
 
 const updateTaskStatus = (id: string) => {
