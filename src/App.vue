@@ -73,10 +73,10 @@ const handleUpdateText = (id: string, text: string) => {
 <style scoped>
 main {
   display: flex;
-  background-color: #e2e8f0;
   padding: 25px;
   min-height: 100dvh;
   justify-content: center;
+  background-color: #e2e8f0;
 }
 
 section {
@@ -109,10 +109,10 @@ h1 {
 .add-input {
   border: none;
   color: #fafafa;
-  padding: 5px 25px;
-  border-radius: 0px 4px 4px 0px;
   font-weight: 700;
+  padding: 5px 25px;
   background: #334155;
+  border-radius: 0px 4px 4px 0px;
 }
 
 li {
