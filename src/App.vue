@@ -2,20 +2,37 @@
 import item from "./components/item.vue";
 import { ref } from "vue";
 
-const items = ref([
-  { text: "Learn Vue 3", completed: false },
-  { text: "Learn TypeScript", completed: true },
-  { text: "Learn Vite", completed: false },
-]);
+interface Todo {
+  id: `${string}-${string}-${string}-${string}-${string}`;
+  text: string;
+  completed: boolean;
+}
+
+const items = ref<Todo[]>([]);
+
+const handleAddTodo = (e: Event) => {
+  e.preventDefault();
+  const input = document.querySelector(".todo-input");
+  const isInput = input instanceof HTMLInputElement;
+
+  if (isInput && input.value) {
+    items.value.push({
+      id: crypto.randomUUID(),
+      text: input.value,
+      completed: false,
+    });
+    input.value = "";
+  }
+};
 </script>
 
 <template>
   <main>
     <section>
       <h1>Todo List ✅</h1>
-      <form class="todo-form">
+      <form class="todo-form" @submit="handleAddTodo">
         <input type="text" class="todo-input" placeholder="Add a new todo" />
-        <button class="add-input" type="submit">Add</button>
+        <button class="add-input">Add</button>
       </form>
       <ul>
         <item
