@@ -48,6 +48,11 @@ li {
   display: flex;
   padding: 5px 0;
   align-items: center;
+  transition: background-color 150ms ease-in-out;
+
+  &:hover {
+    background-color: #f1f5f9;
+  }
 }
 
 input[type="text"] {
@@ -60,7 +65,7 @@ input[type="text"] {
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  accent-color: #262626;
+  accent-color: #334155;
 }
 
 .completed {

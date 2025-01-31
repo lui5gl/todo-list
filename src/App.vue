@@ -116,7 +116,7 @@ h1 {
 }
 
 li {
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid #334155;
 }
 
 li:last-child {
