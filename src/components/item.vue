@@ -54,6 +54,7 @@ input[type="text"] {
   border: none;
   padding: 5px;
   width: 100%;
+  background-color: transparent;
 }
 
 input[type="checkbox"] {
@@ -67,12 +68,12 @@ input[type="checkbox"] {
 }
 
 .delete-button {
-  border: none;
-  margin-left: auto;
-  background-color: transparent;
   width: 24px;
+  border: none;
   height: 24px;
+  margin-left: auto;
   border-radius: 4px;
+  background-color: transparent;
 
   &:hover {
     cursor: pointer;

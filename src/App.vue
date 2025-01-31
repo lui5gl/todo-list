@@ -73,9 +73,18 @@ const handleUpdateText = (id: string, text: string) => {
 <style scoped>
 main {
   display: flex;
+  background-color: #e2e8f0;
   padding: 25px;
   min-height: 100dvh;
   justify-content: center;
+}
+
+section {
+  width: 100%;
+  max-width: 40rem;
+  border-radius: 25px;
+  background-color: #f8fafc;
+  padding: 25px;
 }
 
 h1 {
@@ -92,19 +101,17 @@ h1 {
   width: 100%;
   border: none;
   padding: 5px;
-  max-width: 250px;
-  border-radius: 2px;
-  margin-right: 10px;
-  border: 1px solid #262626;
+  border-radius: 4px 0px 0px 4px;
+  border: 2px solid #334155;
 }
 
 .add-input {
   border: none;
   color: #fafafa;
   padding: 5px 25px;
-  border-radius: 2px;
+  border-radius: 0px 4px 4px 0px;
   font-weight: 700;
-  background: #262626;
+  background: #334155;
 }
 
 li {
