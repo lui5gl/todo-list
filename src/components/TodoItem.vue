@@ -60,6 +60,10 @@ input[type="text"] {
   padding: 5px;
   width: 100%;
   background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 input[type="checkbox"] {
