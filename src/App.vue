@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TodoItem from "./components/TodoItem.vue";
-
-interface Todo {
-  id: `${string}-${string}-${string}-${string}-${string}`;
-  text: string;
-  completed: boolean;
-}
+import type Todo from "./interfaces/iTodoItem";
 
 const items = ref<Todo[]>([]);
 
@@ -73,7 +68,7 @@ const handleUpdateText = (id: string, text: string) => {
 <style scoped>
 main {
   display: flex;
-  padding: 25px;
+  padding: 50px;
   min-height: 100dvh;
   justify-content: center;
   background: rgb(221, 238, 228);
@@ -97,6 +92,7 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  color: #0e201b;
 }
 
 .todo-form {
@@ -106,19 +102,34 @@ h1 {
 .todo-input {
   width: 100%;
   border: none;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 4px 0px 0px 4px;
-  border: 2px solid #1b392f;
+  border: 2px solid #2f6c55;
+}
+
+.todo-input:focus {
+  outline: none;
+  caret-color: #2f6c55;
+}
+
+.todo-input::selection {
+  background: #2f6c55;
+  color: #f1f8f5;
 }
 
 .add-input {
   border: none;
   cursor: pointer;
-  color: #fafafa;
+  color: #f1f8f5;
   font-weight: 700;
-  padding: 5px 25px;
-  background: #1b392f;
+  padding: 0 25px;
+  background: #41886b;
   border-radius: 0px 4px 4px 0px;
+  transition: all 75ms ease-in-out;
+}
+
+.add-input:hover {
+  background: #2f6c55;
 }
 
 li {
