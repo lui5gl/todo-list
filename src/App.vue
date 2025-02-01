@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import item from "./components/item.vue";
 import { ref } from "vue";
+import TodoItem from "./components/TodoItem.vue";
 
 interface Todo {
   id: `${string}-${string}-${string}-${string}-${string}`;
@@ -56,7 +56,7 @@ const handleUpdateText = (id: string, text: string) => {
         <button class="add-input" type="submit">Add</button>
       </form>
       <ul>
-        <item
+        <TodoItem
           v-for="item in items"
           :key="item.id"
           :text="item.text"
