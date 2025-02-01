@@ -76,15 +76,20 @@ main {
   padding: 25px;
   min-height: 100dvh;
   justify-content: center;
-  background-color: #e2e8f0;
+  background: rgb(221, 238, 228);
+  background: radial-gradient(
+    circle,
+    rgba(221, 238, 228, 1) 0%,
+    rgba(189, 221, 204, 1) 100%
+  );
 }
 
 section {
   width: 100%;
   padding: 25px;
   max-width: 40rem;
-  border-radius: 25px;
-  background-color: #f8fafc;
+  border-radius: 10px;
+  background-color: #f1f8f5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 

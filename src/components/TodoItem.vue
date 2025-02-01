@@ -46,7 +46,7 @@ li {
   gap: 5px;
   width: 100%;
   display: flex;
-  padding: 5px 0;
+  padding: 5px;
   align-items: center;
   transition: background-color 150ms ease-in-out;
 
@@ -69,11 +69,11 @@ input[type="text"] {
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  accent-color: #334155;
+  accent-color: #2f6c56;
 }
 
 .completed {
-  text-decoration: line-through;
+  text-decoration: line-through #2f6c56;
 }
 
 .delete-button {
@@ -86,7 +86,11 @@ input[type="checkbox"] {
 
   &:hover {
     cursor: pointer;
-    background-color: #e5e5e5;
+    background-color: #62a589;
+
+    & img {
+      stroke: white;
+    }
   }
 }
 </style>
