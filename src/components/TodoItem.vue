@@ -75,6 +75,11 @@ input[type="text"] {
   width: 100%;
   background-color: transparent;
 
+  &::selection {
+    background-color: #295e4c;
+    color: white;
+  }
+
   &:focus {
     outline: none;
   }
