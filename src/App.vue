@@ -108,15 +108,16 @@ h1 {
   border: none;
   padding: 5px;
   border-radius: 4px 0px 0px 4px;
-  border: 2px solid #334155;
+  border: 2px solid #1b392f;
 }
 
 .add-input {
   border: none;
+  cursor: pointer;
   color: #fafafa;
   font-weight: 700;
   padding: 5px 25px;
-  background: #334155;
+  background: #1b392f;
   border-radius: 0px 4px 4px 0px;
 }
 
