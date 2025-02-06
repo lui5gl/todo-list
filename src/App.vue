@@ -50,13 +50,13 @@ const handleUpdateTextTask = (id: string, text: string) => {
 <template>
   <main>
     <section>
-      <h1>Todo List</h1>
+      <h1>Todo List 📝</h1>
       <form class="todo-form" @submit="handleAddTask">
         <input
           id="todo_input"
           type="text"
           class="todo-input"
-          placeholder="Add a new todo"
+          placeholder="Add a new task ✍️"
         />
         <button class="add-input" type="submit">Add</button>
       </form>
