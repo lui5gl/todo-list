@@ -28,6 +28,8 @@ const onAddTodo = (e: Event) => {
 const handleToggleStateTask = (id: string) => {
   const index = items.value.findIndex((item) => item.id === id);
   items.value[index].completed = !items.value[index].completed;
+
+  localStorage.setItem("todos", JSON.stringify(items.value));
 };
 
 const handleDeleteTask = (id: string) => {
