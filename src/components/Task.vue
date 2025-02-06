@@ -60,6 +60,11 @@ input[type="text"] {
   background-color: transparent;
 }
 
+input[type="text"]::selection {
+  color: #e5e5e5;
+  background-color: #262626;
+}
+
 input[type="checkbox"] {
   accent-color: #262626;
 }
