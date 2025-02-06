@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import "@fontsource-variable/onest";
 import TodoItem from "./components/TodoItem.vue";
 import type Todo from "./interfaces/iTodoItem";
 
@@ -45,7 +46,7 @@ const handleUpdateText = (id: string, text: string) => {
 <template>
   <main>
     <section>
-      <h1>Todo List ✅</h1>
+      <h1>Todo List</h1>
       <form class="todo-form" @submit="onAddTodo">
         <input type="text" class="todo-input" placeholder="Add a new todo" />
         <button class="add-input" type="submit">Add</button>
@@ -67,76 +68,56 @@ const handleUpdateText = (id: string, text: string) => {
 
 <style scoped>
 main {
-  display: flex;
-  padding: 50px;
+  padding: 25px;
   min-height: 100dvh;
-  justify-content: center;
-  background: rgb(221, 238, 228);
+  background: rgb(186, 232, 253);
   background: radial-gradient(
     circle,
-    rgba(221, 238, 228, 1) 0%,
-    rgba(189, 221, 204, 1) 100%
+    rgba(186, 232, 253, 1) 0%,
+    rgba(125, 213, 252, 1) 100%
   );
 }
 
 section {
   width: 100%;
+  margin: auto;
   padding: 25px;
-  max-width: 40rem;
-  border-radius: 10px;
-  background-color: #f1f8f5;
+  max-width: 425px;
+  border-radius: 5px;
+  background-color: #f0faff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   font-size: 2rem;
+  color: #083549;
   text-align: center;
-  margin-bottom: 20px;
-  color: #0e201b;
+  margin-bottom: 10px;
 }
 
-.todo-form {
+form {
   display: flex;
+  border: 2px solid #0ea5e9;
 }
 
-.todo-input {
+input[type="text"] {
   width: 100%;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px 0px 0px 4px;
-  border: 2px solid #2f6c55;
-}
-
-.todo-input:focus {
+  padding: 0 10px;
   outline: none;
-  caret-color: #2f6c55;
 }
 
-.todo-input::selection {
-  background: #2f6c55;
-  color: #f1f8f5;
-}
-
-.add-input {
+button {
   border: none;
-  cursor: pointer;
-  color: #f1f8f5;
   font-weight: 700;
-  padding: 0 25px;
-  background: #41886b;
-  border-radius: 0px 4px 4px 0px;
-  transition: all 75ms ease-in-out;
+  color: #f0faff;
+  padding: 5px 25px;
+  background-color: #0ea5e9;
+  cursor: pointer;
 }
 
-.add-input:hover {
-  background: #2f6c55;
-}
-
-li {
-  border-bottom: 1px solid #334155;
-}
-
-li:last-child {
-  border-bottom: none;
+ul {
+  padding: 0;
+  list-style: none;
 }
 </style>

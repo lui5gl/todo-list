@@ -36,21 +36,7 @@ const handleUpdateText = (e: Event) => {
     />
 
     <button class="delete-button" :onclick="handleDeleteItem">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
-        />
-      </svg>
+      <img src="/icons/delete.svg" alt="Delete" width="20" height="20" />
     </button>
   </li>
 </template>
@@ -58,59 +44,34 @@ const handleUpdateText = (e: Event) => {
 <style scoped>
 li {
   gap: 5px;
-  width: 100%;
   display: flex;
-  padding: 5px;
-  align-items: center;
-  transition: background-color 150ms ease-in-out;
+  padding: 10px 10px;
+}
 
-  &:hover {
-    background-color: #f1f5f9;
-  }
+li:hover {
+  background-color: #e0f5fe;
 }
 
 input[type="text"] {
-  border: none;
-  padding: 5px;
   width: 100%;
-  background-color: transparent;
 
-  &::selection {
-    background-color: #295e4c;
-    color: white;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #295e4c;
-}
-
-.completed {
-  text-decoration: line-through #2f6c56;
-}
-
-.delete-button {
-  width: 24px;
   border: none;
-  height: 24px;
-  margin-left: auto;
-  border-radius: 4px;
+  outline: none;
   background-color: transparent;
+}
 
-  &:hover {
-    cursor: pointer;
-    background-color: #295e4c;
-    stroke: white;
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
 
-    & svg path {
-      stroke: white;
-    }
-  }
+button:hover {
+  background-color: #bae8fd;
 }
 </style>
