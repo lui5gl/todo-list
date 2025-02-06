@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import TodoItem from "./components/TodoItem.vue";
+import Task from "./components/Task.vue";
 import type Todo from "./interfaces/iTodoItem";
 
 const items = ref<Todo[]>([]);
@@ -25,17 +25,17 @@ const onAddTodo = (e: Event) => {
   localStorage.setItem("todos", JSON.stringify(items.value));
 };
 
-const handleToggleState = (id: string) => {
+const handleToggleStateTask = (id: string) => {
   const index = items.value.findIndex((item) => item.id === id);
   items.value[index].completed = !items.value[index].completed;
 };
 
-const handleDeleteItem = (id: string) => {
+const handleDeleteTask = (id: string) => {
   items.value = items.value.filter((item) => item.id !== id);
   localStorage.setItem("todos", JSON.stringify(items.value));
 };
 
-const handleUpdateText = (id: string, text: string) => {
+const handleUpdateTextTask = (id: string, text: string) => {
   const index = items.value.findIndex((item) => item.id === id);
   items.value[index].text = text;
   localStorage.setItem("todos", JSON.stringify(items.value));
@@ -51,14 +51,14 @@ const handleUpdateText = (id: string, text: string) => {
         <button class="add-input" type="submit">Add</button>
       </form>
       <ul>
-        <TodoItem
+        <Task
           v-for="item in items"
           :key="item.id"
           :text="item.text"
           :is-completed="item.completed"
-          @update_state="handleToggleState(item.id)"
-          @update_text="handleUpdateText(item.id, $event)"
-          @delete="handleDeleteItem(item.id)"
+          @update_state="handleToggleStateTask(item.id)"
+          @update_text="handleUpdateTextTask(item.id, $event)"
+          @delete="handleDeleteTask(item.id)"
         />
       </ul>
     </section>
