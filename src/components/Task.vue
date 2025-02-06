@@ -24,8 +24,7 @@ const handleUpdateText = (e: Event) => {
   <li>
     <input type="checkbox" :checked="isCompleted" @change="handleToggleState" />
 
-    <input
-      type="text"
+    <textarea
       :value="text"
       @change="handleUpdateText"
       :class="isCompleted ? 'completed' : ''"
@@ -41,9 +40,11 @@ const handleUpdateText = (e: Event) => {
 li {
   gap: 5px;
   display: flex;
-  height: 50px;
+  min-height: 50px;
   padding: 10px 10px;
+  justify-items: center;
   border-bottom: 1px solid #737373;
+  transition: all 75ms ease-in-out;
 }
 
 li:hover > button {
@@ -62,14 +63,16 @@ li:hover {
   background-color: #e5e5e5;
 }
 
-input[type="text"] {
+textarea {
   width: 100%;
   border: none;
   outline: none;
   background-color: transparent;
+  resize: none;
+  field-sizing: content;
 }
 
-input[type="text"]::selection {
+textarea::selection {
   color: #e5e5e5;
   background-color: #262626;
 }

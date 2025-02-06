@@ -91,7 +91,7 @@ section {
   width: 100%;
   margin: auto;
   padding: 25px;
-  max-width: 425px;
+  max-width: 768px;
   border-radius: 5px;
   background-color: #fafafa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
