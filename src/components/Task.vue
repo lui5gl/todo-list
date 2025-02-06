@@ -22,16 +22,12 @@ const handleUpdateText = (e: Event) => {
 
 <template>
   <li>
-    <input
-      type="checkbox"
-      :checked="isCompleted"
-      :onclick="handleToggleState"
-    />
+    <input type="checkbox" :checked="isCompleted" @change="handleToggleState" />
 
     <input
       type="text"
       :value="text"
-      v-on:change="handleUpdateText"
+      @change="handleUpdateText"
       :class="isCompleted ? 'completed' : ''"
     />
 
