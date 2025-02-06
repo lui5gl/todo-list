@@ -3,18 +3,19 @@ import { ref } from "vue";
 import Task from "./components/Task.vue";
 import type Todo from "./interfaces/iTodoItem";
 
-const items = ref<Todo[]>([]);
+const tasks = ref<Todo[]>([]);
 
-localStorage.getItem("todos") &&
-  (items.value = JSON.parse(localStorage.getItem("todos") || "[]"));
+// Preserve the tasks in the local storage
+localStorage.getItem("tasks") &&
+  (tasks.value = JSON.parse(localStorage.getItem("tasks") || "[]"));
 
-const onAddTodo = (e: Event) => {
+const handleAddTask = (e: Event) => {
   e.preventDefault();
-  const input = document.querySelector(".todo-input");
+  const input = document.getElementById("todo_input");
   const isInput = input instanceof HTMLInputElement;
 
   if (isInput && input.value) {
-    items.value.push({
+    tasks.value.push({
       id: crypto.randomUUID(),
       text: input.value,
       completed: false,
@@ -22,25 +23,25 @@ const onAddTodo = (e: Event) => {
     input.value = "";
   }
 
-  localStorage.setItem("todos", JSON.stringify(items.value));
+  localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
 
 const handleToggleStateTask = (id: string) => {
-  const index = items.value.findIndex((item) => item.id === id);
-  items.value[index].completed = !items.value[index].completed;
+  const index = tasks.value.findIndex((item) => item.id === id);
+  tasks.value[index].completed = !tasks.value[index].completed;
 
-  localStorage.setItem("todos", JSON.stringify(items.value));
+  localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
 
 const handleDeleteTask = (id: string) => {
-  items.value = items.value.filter((item) => item.id !== id);
-  localStorage.setItem("todos", JSON.stringify(items.value));
+  tasks.value = tasks.value.filter((item) => item.id !== id);
+  localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
 
 const handleUpdateTextTask = (id: string, text: string) => {
-  const index = items.value.findIndex((item) => item.id === id);
-  items.value[index].text = text;
-  localStorage.setItem("todos", JSON.stringify(items.value));
+  const index = tasks.value.findIndex((item) => item.id === id);
+  tasks.value[index].text = text;
+  localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
 </script>
 
@@ -48,13 +49,18 @@ const handleUpdateTextTask = (id: string, text: string) => {
   <main>
     <section>
       <h1>Todo List</h1>
-      <form class="todo-form" @submit="onAddTodo">
-        <input type="text" class="todo-input" placeholder="Add a new todo" />
+      <form class="todo-form" @submit="handleAddTask">
+        <input
+          id="todo_input"
+          type="text"
+          class="todo-input"
+          placeholder="Add a new todo"
+        />
         <button class="add-input" type="submit">Add</button>
       </form>
       <ul>
         <Task
-          v-for="item in items"
+          v-for="item in tasks"
           :key="item.id"
           :text="item.text"
           :is-completed="item.completed"
