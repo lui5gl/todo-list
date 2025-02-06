@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import "@fontsource-variable/onest";
 import TodoItem from "./components/TodoItem.vue";
 import type Todo from "./interfaces/iTodoItem";
 
