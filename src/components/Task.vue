@@ -93,6 +93,8 @@ button {
   align-items: center;
   justify-items: center;
   background-color: transparent;
+  height: fit-content;
+  margin: auto;
   transition: all 75ms;
 }
 
