@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Task from "./components/Task.vue";
-import type Todo from "./interfaces/iTodoItem";
+import type iTask from "./interfaces/iTask";
 
-const tasks = ref<Todo[]>([]);
+const tasks = ref<iTask[]>([]);
 
 // Preserve the tasks in the local storage
 localStorage.getItem("tasks") &&
