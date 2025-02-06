@@ -70,11 +70,11 @@ const handleUpdateText = (id: string, text: string) => {
 main {
   padding: 25px;
   min-height: 100dvh;
-  background: rgb(186, 232, 253);
+  background: rgb(245, 245, 245);
   background: radial-gradient(
     circle,
-    rgba(186, 232, 253, 1) 0%,
-    rgba(125, 213, 252, 1) 100%
+    rgba(245, 245, 245, 1) 0%,
+    rgba(229, 229, 229, 1) 100%
   );
 }
 
@@ -84,20 +84,21 @@ section {
   padding: 25px;
   max-width: 425px;
   border-radius: 5px;
-  background-color: #f0faff;
+  background-color: #fafafa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   font-size: 2rem;
-  color: #083549;
+  color: #262626;
   text-align: center;
   margin-bottom: 10px;
 }
 
 form {
   display: flex;
-  border: 2px solid #0ea5e9;
+  border: 2px solid #262626;
+  margin-bottom: 10px;
 }
 
 input[type="text"] {
@@ -105,15 +106,16 @@ input[type="text"] {
   border: none;
   padding: 0 10px;
   outline: none;
+  background-color: transparent;
 }
 
 button {
   border: none;
-  font-weight: 700;
-  color: #f0faff;
-  padding: 5px 25px;
-  background-color: #0ea5e9;
   cursor: pointer;
+  color: #fafafa;
+  font-weight: 700;
+  padding: 5px 25px;
+  background-color: #262626;
 }
 
 ul {
