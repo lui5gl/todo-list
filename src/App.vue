@@ -56,9 +56,9 @@ const handleUpdateText = (id: string, text: string) => {
           :key="item.id"
           :text="item.text"
           :is-completed="item.completed"
-          v-on:update_state="handleToggleState(item.id)"
-          v-on:update_text="handleUpdateText(item.id, $event)"
-          v-on:delete="handleDeleteItem(item.id)"
+          @update_state="handleToggleState(item.id)"
+          @update_text="handleUpdateText(item.id, $event)"
+          @delete="handleDeleteItem(item.id)"
         />
       </ul>
     </section>
