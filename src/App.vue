@@ -14,14 +14,16 @@ const handleAddTask = (e: Event) => {
   const input = document.getElementById("todo_input");
   const isInput = input instanceof HTMLInputElement;
 
-  if (isInput && input.value) {
-    tasks.value.push({
-      id: crypto.randomUUID(),
-      text: input.value,
-      completed: false,
-    });
-    input.value = "";
-  }
+  // Prevent empty tasks
+  if (!isInput || !input.value) return;
+
+  tasks.value.push({
+    id: crypto.randomUUID(),
+    text: input.value,
+    completed: false,
+  });
+
+  input.value = "";
 
   localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
