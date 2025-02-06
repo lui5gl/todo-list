@@ -41,8 +41,17 @@ const handleUpdateText = (e: Event) => {
 li {
   gap: 5px;
   display: flex;
+  height: 50px;
   padding: 10px 10px;
   border-bottom: 1px solid #737373;
+}
+
+li:hover > button {
+  display: flex;
+}
+
+li:focus > button {
+  display: flex;
 }
 
 li:last-child {
@@ -76,7 +85,7 @@ input[type="checkbox"] {
 button {
   border: none;
   padding: 5px;
-  display: flex;
+  display: none;
   cursor: pointer;
   align-items: center;
   justify-items: center;
