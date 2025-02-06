@@ -106,8 +106,9 @@ h1 {
 
 form {
   display: flex;
-  border: 2px solid #262626;
+  border-radius: 5px;
   margin-bottom: 10px;
+  border: 2px solid #262626;
 }
 
 input[type="text"] {
