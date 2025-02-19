@@ -2,23 +2,23 @@
 
 ![todo app](docs/images/todo_list.jpeg)
 
-Una aplicación simple y eficiente para gestionar tus tareas diarias con Vue.js. Añade, elimina y marca tareas como completadas de manera sencilla. 📋✨
+A simple and efficient application to manage your daily tasks with Vue.js. Easily add, delete, and mark tasks as completed. 📋✨
 
-## Características 🚀
+## Features 🚀
 
-- ➕ Agregar nuevas tareas.
-- ✅ Marcar tareas como completadas.
-- 🗑️ Eliminar tareas.
-- 📱 Interfaz amigable y responsiva.
+- ➕ Add new tasks.
+- ✅ Mark tasks as completed.
+- 🗑️ Delete tasks.
+- 📱 User-friendly and responsive interface.
 
-## Contribuciones 🤝
+## Contributions 🤝
 
-Las contribuciones son bienvenidas. Si deseas colaborar, sigue estos pasos:
+Contributions are welcome! To collaborate, follow these steps:
 
-1. 🔄 Realiza un fork del repositorio.
-2. 🌱 Crea una nueva rama con tu funcionalidad o corrección de error.
-3. 🚀 Envía un pull request.
+1. 🔄 Fork the repository.
+2. 🌱 Create a new branch with your feature or bug fix.
+3. 🚀 Submit a pull request.
 
-## Licencia 📜
+## License 📜
 
-Este proyecto está bajo la licencia MIT. 🏆
+This project is licensed under the MIT License. 🏆
