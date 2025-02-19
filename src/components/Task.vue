@@ -31,7 +31,7 @@ const handleUpdateText = (e: Event) => {
     />
 
     <button class="delete-button" :onclick="handleDeleteItem">
-      <img src="/icons/delete.svg" alt="Delete" width="20" height="20" />
+      <img src="/icons/delete.svg" alt="Delete" width="18" height="18" />
     </button>
   </li>
 </template>
@@ -39,20 +39,10 @@ const handleUpdateText = (e: Event) => {
 <style scoped>
 li {
   gap: 10px;
+  padding: 10px;
   display: flex;
-  min-height: 50px;
-  padding: 10px 10px;
-  justify-items: center;
+  align-items: start;
   transition: all 150ms ease-in-out;
-  border-bottom: 1px solid #737373;
-}
-
-li:hover > button {
-  display: flex;
-}
-
-li:focus > button {
-  display: flex;
 }
 
 li:last-child {
@@ -79,6 +69,7 @@ textarea::selection {
 
 input[type="checkbox"] {
   accent-color: #262626;
+  margin: 5px 0;
 }
 
 .completed {
@@ -86,12 +77,14 @@ input[type="checkbox"] {
 }
 
 button {
+  align-items: center;
   background-color: transparent;
   border-radius: 4px;
-  border: none;
-  display: none;
-  height: fit-content;
   padding: 5px;
+  border: none;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
   transition: all 75ms;
   width: fit-content;
 }
