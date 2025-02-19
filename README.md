@@ -1,5 +1,22 @@
-# Vue 3 + TypeScript + Vite
+# Todo List en Vue ✅📝
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Una aplicación simple y eficiente para gestionar tus tareas diarias con Vue.js. Añade, elimina y marca tareas como completadas de manera sencilla. 📋✨
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Características 🚀
+
+- ➕ Agregar nuevas tareas.
+- ✅ Marcar tareas como completadas.
+- 🗑️ Eliminar tareas.
+- 📱 Interfaz amigable y responsiva.
+
+## Contribuciones 🤝
+
+Las contribuciones son bienvenidas. Si deseas colaborar, sigue estos pasos:
+
+1. 🔄 Realiza un fork del repositorio.
+2. 🌱 Crea una nueva rama con tu funcionalidad o corrección de error.
+3. 🚀 Envía un pull request.
+
+## Licencia 📜
+
+Este proyecto está bajo la licencia MIT. 🏆
