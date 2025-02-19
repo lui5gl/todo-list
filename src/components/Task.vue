@@ -27,6 +27,7 @@ const handleUpdateText = (e: Event) => {
     <textarea
       :value="text"
       @change="handleUpdateText"
+      placeholder="Add a task"
       :class="isCompleted ? 'completed' : ''"
     />
 
@@ -42,6 +43,7 @@ li {
   padding: 10px;
   display: flex;
   align-items: start;
+  justify-items: center;
   transition: all 150ms ease-in-out;
 }
 
@@ -56,10 +58,10 @@ li:hover {
 textarea {
   width: 100%;
   border: none;
-  outline: none;
-  background-color: transparent;
-  field-sizing: content;
   resize: none;
+  outline: none;
+  field-sizing: content;
+  background-color: transparent;
 }
 
 textarea::selection {
@@ -68,8 +70,8 @@ textarea::selection {
 }
 
 input[type="checkbox"] {
-  accent-color: #262626;
   margin: 5px 0;
+  accent-color: #262626;
 }
 
 .completed {
@@ -78,7 +80,6 @@ input[type="checkbox"] {
 
 button {
   align-items: center;
-  background-color: transparent;
   border-radius: 4px;
   padding: 5px;
   border: none;
@@ -87,6 +88,7 @@ button {
   justify-content: center;
   transition: all 75ms;
   width: fit-content;
+  background-color: transparent;
 }
 
 button:hover {
