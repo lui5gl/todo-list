@@ -31,7 +31,6 @@ const handleAddTask = (e: Event) => {
 const handleToggleStateTask = (id: string) => {
   const index = tasks.value.findIndex((item) => item.id === id);
   tasks.value[index].completed = !tasks.value[index].completed;
-
   localStorage.setItem("tasks", JSON.stringify(tasks.value));
 };
 
