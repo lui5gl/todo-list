@@ -38,13 +38,14 @@ const handleUpdateText = (e: Event) => {
 
 <style scoped>
 li {
-  gap: 5px;
+  gap: 10px;
   display: flex;
   min-height: 50px;
   padding: 10px 10px;
+  border-radius: 4px;
   justify-items: center;
-  border-bottom: 1px solid #737373;
   transition: all 75ms ease-in-out;
+  border-bottom: 1px solid #737373;
 }
 
 li:hover > button {
@@ -68,8 +69,8 @@ textarea {
   border: none;
   outline: none;
   background-color: transparent;
-  resize: none;
   field-sizing: content;
+  resize: none;
 }
 
 textarea::selection {
