@@ -31,28 +31,18 @@ const handleUpdateText = (e: Event) => {
     />
 
     <button class="delete-button" :onclick="handleDeleteItem">
-      <img src="/icons/delete.svg" alt="Delete" width="20" height="20" />
+      <img src="/icons/delete.svg" alt="Delete" width="18" height="18" />
     </button>
   </li>
 </template>
 
 <style scoped>
 li {
-  gap: 5px;
+  gap: 10px;
+  padding: 10px;
   display: flex;
-  min-height: 50px;
-  padding: 10px 10px;
-  justify-items: center;
-  border-bottom: 1px solid #737373;
-  transition: all 75ms ease-in-out;
-}
-
-li:hover > button {
-  display: flex;
-}
-
-li:focus > button {
-  display: flex;
+  align-items: start;
+  transition: all 150ms ease-in-out;
 }
 
 li:last-child {
@@ -68,8 +58,8 @@ textarea {
   border: none;
   outline: none;
   background-color: transparent;
-  resize: none;
   field-sizing: content;
+  resize: none;
 }
 
 textarea::selection {
@@ -79,6 +69,7 @@ textarea::selection {
 
 input[type="checkbox"] {
   accent-color: #262626;
+  margin: 5px 0;
 }
 
 .completed {
@@ -86,16 +77,16 @@ input[type="checkbox"] {
 }
 
 button {
-  border: none;
-  padding: 5px;
-  display: none;
-  cursor: pointer;
   align-items: center;
-  justify-items: center;
   background-color: transparent;
+  border-radius: 4px;
+  padding: 5px;
+  border: none;
+  display: flex;
   height: fit-content;
-  margin: auto;
+  justify-content: center;
   transition: all 75ms;
+  width: fit-content;
 }
 
 button:hover {
