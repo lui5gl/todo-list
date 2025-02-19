@@ -1,5 +1,7 @@
 # Todo List en Vue ✅📝
 
+![todo app](docs/images/todo_list.jpeg)
+
 Una aplicación simple y eficiente para gestionar tus tareas diarias con Vue.js. Añade, elimina y marca tareas como completadas de manera sencilla. 📋✨
 
 ## Características 🚀
