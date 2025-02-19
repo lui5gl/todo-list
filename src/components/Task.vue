@@ -42,9 +42,8 @@ li {
   display: flex;
   min-height: 50px;
   padding: 10px 10px;
-  border-radius: 4px;
   justify-items: center;
-  transition: all 75ms ease-in-out;
+  transition: all 150ms ease-in-out;
   border-bottom: 1px solid #737373;
 }
 
@@ -87,16 +86,14 @@ input[type="checkbox"] {
 }
 
 button {
-  border: none;
-  padding: 5px;
-  display: none;
-  cursor: pointer;
-  align-items: center;
-  justify-items: center;
   background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  display: none;
   height: fit-content;
-  margin: auto;
+  padding: 5px;
   transition: all 75ms;
+  width: fit-content;
 }
 
 button:hover {
