@@ -29,7 +29,7 @@ const handleUpdateText = (e: Event) => {
       @change="handleUpdateText"
       placeholder="Add a task"
       :class="isCompleted ? 'completed' : ''"
-    />
+    ></textarea>
 
     <button class="delete-button" :onclick="handleDeleteItem">
       <img src="/icons/delete.svg" alt="Delete" width="18" height="18" />
