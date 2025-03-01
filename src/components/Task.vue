@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 defineProps<{ text: string; isCompleted: boolean }>();
+
+const isMenuOpen = ref(false);
 
 const emit = defineEmits<{
   (e: "update_state"): void;
@@ -12,6 +16,9 @@ const handleToggleState = () => {
 };
 
 const handleDeleteItem = () => {
+  const confirmation = confirm("Are you sure you want to delete this task?");
+  if (!confirmation) return;
+
   emit("delete");
 };
 
@@ -45,9 +52,17 @@ const handleUpdateText = (e: Event) => {
       :class="isCompleted ? 'completed' : ''"
     ></textarea>
 
-    <button class="delete-button" :onclick="handleDeleteItem">
-      <img src="/icons/delete.svg" alt="Delete" width="18" height="18" />
-    </button>
+    <div class="options">
+      <button class="options-button" @click="isMenuOpen = !isMenuOpen">
+        <img src="/icons/options.svg" alt="Options" width="14" height="14" />
+      </button>
+      <div :class="['options-menu', isMenuOpen ? 'options-menu-show' : '']">
+        <button class="options-menu-button">Archive</button>
+        <button @click="handleDeleteItem" class="options-menu-button">
+          Delete
+        </button>
+      </div>
+    </div>
   </li>
 </template>
 
@@ -56,6 +71,7 @@ li {
   gap: 10px;
   padding: 10px;
   display: flex;
+  border-radius: 8px;
   align-items: start;
   justify-items: center;
   transition: all 150ms ease-in-out;
@@ -84,7 +100,7 @@ textarea::selection {
 }
 
 .check {
-  border: 2px solid #443f3f;
+  border: 2px solid #4f4f4f;
   border-radius: 8px;
   width: 20px;
   height: 20px;
@@ -95,40 +111,67 @@ textarea::selection {
 }
 
 .check-completed {
-  background-color: #5d5d5d;
-  border-color: #5d5d5d;
+  background-color: #4f4f4f;
+  border-color: #4f4f4f;
 }
 
 input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"]:checked {
-  label {
-    background-color: #443f3f;
-  }
-
-  background-color: #443f3f;
-}
-
 .completed {
   text-decoration: line-through;
 }
 
-button {
-  align-items: center;
-  border-radius: 4px;
-  padding: 5px;
-  border: none;
-  display: flex;
-  height: fit-content;
-  justify-content: center;
-  transition: all 75ms;
-  width: fit-content;
-  background-color: transparent;
+.options {
+  position: relative;
 }
 
-button:hover {
-  background-color: #d4d4d4;
+.options-button {
+  border-radius: 8px;
+  width: 25px;
+  height: 25px;
+  aspect-ratio: 1;
+  justify-content: center;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 5px;
+}
+
+.options-button:hover {
+  background-color: #d1d1d1;
+}
+
+.options-menu {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  top: 25px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.options-menu-button {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.options-menu-show {
+  display: block;
+  z-index: 100;
+}
+
+.options-menu-button:hover {
+  background-color: #e5e5e5;
 }
 </style>
