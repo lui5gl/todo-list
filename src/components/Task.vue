@@ -22,7 +22,21 @@ const handleUpdateText = (e: Event) => {
 
 <template>
   <li>
-    <input type="checkbox" :checked="isCompleted" @change="handleToggleState" />
+    <label :class="['check', isCompleted ? 'check-completed' : '']">
+      <img
+        v-if="isCompleted"
+        src="/icons/check.svg"
+        alt="Toggle state"
+        class="check-icon"
+        width="12"
+        height="12"
+      />
+      <input
+        type="checkbox"
+        :checked="isCompleted"
+        @change="handleToggleState"
+      />
+    </label>
 
     <textarea
       :value="text"
@@ -69,9 +83,32 @@ textarea::selection {
   background-color: #262626;
 }
 
+.check {
+  border: 2px solid #443f3f;
+  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-completed {
+  background-color: #5d5d5d;
+  border-color: #5d5d5d;
+}
+
 input[type="checkbox"] {
-  margin: 5px 0;
-  accent-color: #262626;
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  label {
+    background-color: #443f3f;
+  }
+
+  background-color: #443f3f;
 }
 
 .completed {
